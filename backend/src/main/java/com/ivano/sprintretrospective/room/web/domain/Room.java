@@ -2,15 +2,23 @@ package com.ivano.sprintretrospective.room.web.domain;
 
 import com.ivano.sprintretrospective.column.web.domain.Column;
 import com.ivano.sprintretrospective.user.web.domain.User;
+import lombok.*;
 import java.util.List;
+import java.util.UUID;
 
+@Data
 public class Room
 {
-	String name;
+	/**
+	 * The id of the room.
+	 */
+	private final UUID id = UUID.randomUUID();
 
-	User moderator;
+	private final String name;
 
-	List<User> users;
+	private final User moderator;
 
-	List<Column> columns;
+	private final List<User> users;
+
+	private final List<Column> columns;
 }
